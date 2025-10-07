@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+
+        form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="/post_route" method="POST">
+        <h2>User Information</h2>
+        <button type="button" onclick="auto_fill_form()">AUTO FILL FOR TESTING</button>
+        <br></br>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter First Name">
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter Email">
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number">
+
+        <label for="role">Role</label>
+        <input type="text" id="role" name="role" placeholder="Enter Role">
+
+        <label for="department">Department</label>
+        <input type="text" id="department" name="department" placeholder="Enter Department">
+
+        <label for="status">Status</label>
+        <input type="text" id="status" name="status" placeholder="Enter Status">
+
+        <label for="joinDate">Join Date</label>
+        <input type="date" id="joinDate" name="joinDate">
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" placeholder="Enter Location">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function auto_fill_form() {
+            document.getElementById('firstName').value = "Rajesh";
+            document.getElementById('lastName').value = "Kumar";
+            document.getElementById('email').value = "rajesh.kumar@email.com";
+            document.getElementById('phone').value = "+91-9876543210";
+            document.getElementById('role').value = "Software Engineer";
+            document.getElementById('department').value = "Engineering";
+            document.getElementById('status').value = "active";
+            document.getElementById('joinDate').value = "2023-01-15";
+            document.getElementById('location').value = "Bangalore";
+        }
+    </script>
+</body>
+</html>

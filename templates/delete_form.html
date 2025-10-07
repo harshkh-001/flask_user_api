@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Delete User</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        label, input, button {
+            margin: 5px 0;
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3>Delete User</h3>
+    <label>ID:</label>
+    <input type="number" id="id" placeholder="Enter User ID">
+    <br></br>
+    <h4> OR </h4>
+    <label>First Name:</label>
+    <input type="text" id="firstName" placeholder="Enter First Name">
+    <br><br>
+    <button onclick="deleteUser()">Delete User</button>
+
+    <p id="response"></p>
+
+    <script>
+        function deleteUser() {
+            const id = document.getElementById('id').value;
+            const firstName = document.getElementById('firstName').value;
+            
+            const payload = {};
+            payload.id = Number(id);
+            payload.firstName = firstName;
+
+            fetch('/delete_route', {
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => document.getElementById('response').innerText = JSON.stringify(data))
+            .catch(err => document.getElementById('response').innerText = err);
+        }
+    </script>
+</body>
+</html>
