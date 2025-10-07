@@ -1,4 +1,4 @@
-# Flask User API
+# Flask User API ( [LIVE DEMO](https://flask-user-api-ylfd.onrender.com/) )
 
 A simple **Flask-based REST API** to manage users with **GET, POST, and DELETE** operations. This project connects to **MongoDB Atlas** to store user data and provides a clean web interface for testing the API.
 
@@ -65,4 +65,45 @@ python app.py
 | GET    | `/get_route`    | Returns all users in JSON format      |
 | POST   | `/post_route`   | Adds a new user (from form or JSON)   |
 | DELETE | `/delete_route` | Deletes a user by `id` or `firstName` |
+
+
+## 🌐 Deploy on Render
+
+1. **Push your project to GitHub.**  
+2. **Create a new Web Service** on [Render](https://render.com).  
+3. **Connect your GitHub repo.**  
+4. In **Environment Variables**, add:  
+   ```
+   MONGO_URI = your_mongodb_atlas_connection_string
+   ```
+5. Set **Start Command** to:  
+   ```
+   gunicorn app:app
+   ```
+6. Render will automatically build and deploy your Flask app.
+
+---
+
+## 🔗 Live Demo
+
+Visit the deployed app here:  
+👉 [LIVE DEMO](https://flask-user-api-ylfd.onrender.com/)
+
+---
+
+## 🧰 Tech Stack
+
+- **Flask** — Backend Framework  
+- **MongoDB Atlas** — Database  
+- **Gunicorn** — Production Server  
+- **Render** — Hosting
+
+---
+
+## 👨‍💻 Author
+
+**Harsh Khandelwal**  
+📧 Email: harshkhandelwal1245@gmail.com  
+🌐 GitHub: [HARSH GITHUB](https://github.com/harshkh-001/)
+
 
